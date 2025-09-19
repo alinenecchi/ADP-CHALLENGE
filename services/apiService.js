@@ -4,6 +4,7 @@
  */
 
 const axios = require("axios");
+const logger = require("../utils/logger");
 
 class ApiService {
   constructor() {
@@ -28,11 +29,12 @@ class ApiService {
     // Request interceptor
     this.client.interceptors.request.use(
       (config) => {
-        console.log(`${config.method?.toUpperCase()} ${config.url}`);
+        config.startTime = Date.now();
+        logger.info(`[API] ${config.method?.toUpperCase()} ${config.url}`);
         return config;
       },
       (error) => {
-        console.error("Request error:", error.message);
+        logger.error("Request error:", error);
         return Promise.reject(error);
       }
     );
@@ -40,19 +42,24 @@ class ApiService {
     // Response interceptor
     this.client.interceptors.response.use(
       (response) => {
-        console.log(`${response.status} ${response.statusText}`);
+        const duration = Date.now() - response.config.startTime;
+        logger.success(
+          `[API] ${response.config.method?.toUpperCase()} ${
+            response.config.url
+          } - ${response.status} (${duration}ms)`
+        );
         return response;
       },
       (error) => {
-        console.error("Response error:", error.message);
+        logger.error("Response error:", error);
         return Promise.reject(error);
       }
     );
   }
 
   /**
-   * Fetches task data from ADP API with retry logic
-   * @returns {Promise<Object>} Task data with id and transactions
+   * Fetches task data from ADP API
+   * @returns {Promise<Object>} Task data with transactions
    */
   async fetchTaskData() {
     const maxRetries = parseInt(process.env.API_RETRY_ATTEMPTS) || 3;
@@ -60,29 +67,23 @@ class ApiService {
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
-        console.log(`Attempt ${attempt}/${maxRetries}...`);
+        logger.info(`Fetching task data (attempt ${attempt}/${maxRetries})...`);
 
         const response = await this.client.get("/get-task");
 
-        if (
-          !response.data ||
-          !response.data.id ||
-          !Array.isArray(response.data.transactions)
-        ) {
-          throw new Error("Invalid response format from API");
-        }
-
-        console.log(`Task ID: ${response.data.id}`);
-        console.log(`Total transactions: ${response.data.transactions.length}`);
+        logger.success("Task data fetched successfully", {
+          taskId: response.data.id,
+          transactionCount: response.data.transactions?.length || 0,
+        });
 
         return response.data;
       } catch (error) {
         lastError = error;
-        console.error(`Attempt ${attempt} failed:`, error.message);
+        logger.warn(`Attempt ${attempt} failed: ${error.message}`);
 
         if (attempt < maxRetries) {
           const delay = Math.pow(2, attempt) * 1000; // Exponential backoff
-          console.log(`Retrying in ${delay}ms...`);
+          logger.info(`Retrying in ${delay}ms...`);
           await new Promise((resolve) => setTimeout(resolve, delay));
         }
       }
@@ -94,64 +95,38 @@ class ApiService {
   }
 
   /**
-   * Submits results to ADP API with retry logic
-   * @param {string} taskId - Task ID from original request
+   * Submits results to ADP API
+   * @param {string} taskId - Task ID
    * @param {Array} result - Array of transaction IDs
-   * @returns {Promise<Object>} API response
+   * @returns {Promise<string>} API response
    */
   async submitResults(taskId, result) {
-    if (!taskId || !Array.isArray(result)) {
-      throw new Error("Invalid parameters: taskId and result are required");
-    }
-
     const maxRetries = parseInt(process.env.API_RETRY_ATTEMPTS) || 3;
     let lastError;
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
-        console.log(`Submitting results (attempt ${attempt}/${maxRetries})...`);
-        console.log(`Task ID: ${taskId}`);
-        console.log(`Result count: ${result.length}`);
+        logger.info(`Submitting results (attempt ${attempt}/${maxRetries})...`);
 
         const response = await this.client.post("/submit-task", {
           id: taskId,
           result: result,
         });
 
-        console.log(`Results submitted successfully!`);
-        console.log(`Response: ${response.data}`);
+        logger.success("Results submitted successfully", {
+          taskId: taskId,
+          resultCount: result.length,
+          response: response.data,
+        });
 
         return response.data;
       } catch (error) {
         lastError = error;
-        console.error(`Attempt ${attempt} failed:`, error.message);
-
-        if (error.response) {
-          const status = error.response.status;
-          const data = error.response.data;
-
-          console.error(`HTTP ${status}:`, data);
-
-          // Handle specific error cases
-          switch (status) {
-            case 400:
-              throw new Error(
-                "Bad Request: Incorrect value in result; no ID specified; value is invalid"
-              );
-            case 404:
-              throw new Error("Not Found: Value not found for specified ID");
-            case 503:
-              throw new Error(
-                "Service Unavailable: Error communicating with database"
-              );
-            default:
-              throw new Error(`HTTP ${status}: ${data || "Unknown error"}`);
-          }
-        }
+        logger.warn(`Attempt ${attempt} failed: ${error.message}`);
 
         if (attempt < maxRetries) {
           const delay = Math.pow(2, attempt) * 1000; // Exponential backoff
-          console.log(`Retrying in ${delay}ms...`);
+          logger.info(`Retrying in ${delay}ms...`);
           await new Promise((resolve) => setTimeout(resolve, delay));
         }
       }
@@ -163,15 +138,23 @@ class ApiService {
   }
 
   /**
-   * Health check for API connectivity
-   * @returns {Promise<boolean>} True if API is accessible
+   * Performs health check on ADP API
+   * @returns {Promise<boolean>} Health status
    */
   async healthCheck() {
     try {
-      await this.client.get("/get-task");
+      logger.info("Performing health check...");
+
+      const response = await this.client.get("/get-task");
+
+      logger.success("Health check passed", {
+        status: response.status,
+        taskId: response.data.id,
+      });
+
       return true;
     } catch (error) {
-      console.error("Health check failed:", error.message);
+      logger.error("Health check failed:", error);
       return false;
     }
   }

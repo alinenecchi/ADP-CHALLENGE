@@ -12,6 +12,7 @@ require("dotenv").config();
 
 const ApiService = require("./services/apiService");
 const TransactionService = require("./services/transactionService");
+const logger = require("./utils/logger");
 
 class ADPChallenge {
   constructor() {
@@ -24,56 +25,59 @@ class ADPChallenge {
    */
   async run() {
     try {
-      console.log("Starting ADP Innovation Labs Challenge");
-      console.log("=".repeat(50));
+      logger.info("Starting ADP Innovation Labs Challenge");
+      logger.info("=".repeat(50));
 
       // Step 1: Fetch task data from ADP API
-      console.log("Fetching transaction data from ADP API...");
+      logger.info("Fetching transaction data from ADP API...");
       const taskData = await this.apiService.fetchTaskData();
-      console.log(`Data loaded: ${taskData.transactions.length} transactions`);
+      logger.info(`Data loaded: ${taskData.transactions.length} transactions`);
 
       // Step 2: Find top earner from last year
-      console.log(
+      logger.info(
         "Analyzing transactions to find top earner from last year..."
       );
       const topEarner = this.transactionService.findTopEarnerFromLastYear(
         taskData.transactions
       );
-      console.log(
+      logger.success(
         `Top earner: ${topEarner.name} (${
           topEarner.id
         }) - $${topEarner.totalEarnings.toLocaleString()}`
       );
 
       // Step 3: Filter alpha transactions from top earner
-      console.log("Filtering alpha transactions from top earner...");
+      logger.info("Filtering alpha transactions from top earner...");
       const alphaTransactionIds =
-        this.transactionService.filterAlphaTransactions(topEarner.transactions);
-      console.log(`Found ${alphaTransactionIds.length} alpha transactions`);
+        this.transactionService.filterAlphaTransactions(
+          taskData.transactions,
+          topEarner.id
+        );
+      logger.info(`Found ${alphaTransactionIds.length} alpha transactions`);
 
       // Step 4: Submit results to ADP API
-      console.log("Submitting results to ADP API...");
+      logger.info("Submitting results to ADP API...");
       const submitResponse = await this.apiService.submitResults(
         taskData.id,
         alphaTransactionIds
       );
-      console.log(`API Response: ${submitResponse}`);
+      logger.success(`API Response: ${submitResponse}`);
 
       // Final results
-      console.log("\n" + "=".repeat(50));
-      console.log("Challenge completed successfully!");
-      console.log(`Task ID: ${taskData.id}`);
-      console.log(`Top Earner: ${topEarner.name} (${topEarner.id})`);
-      console.log(
+      logger.success("\n" + "=".repeat(50));
+      logger.success("Challenge completed successfully!");
+      logger.success(`Task ID: ${taskData.id}`);
+      logger.success(`Top Earner: ${topEarner.name} (${topEarner.id})`);
+      logger.success(
         `Total Earnings: $${topEarner.totalEarnings.toLocaleString()}`
       );
-      console.log(`Alpha Transactions: ${alphaTransactionIds.length}`);
-      console.log(
+      logger.success(`Alpha Transactions: ${alphaTransactionIds.length}`);
+      logger.success(
         `Result: [${alphaTransactionIds.slice(0, 3).join(", ")}${
           alphaTransactionIds.length > 3 ? "..." : ""
         }]`
       );
-      console.log("=".repeat(50));
+      logger.success("=".repeat(50));
 
       return {
         success: true,
@@ -87,9 +91,57 @@ class ADPChallenge {
         apiResponse: submitResponse,
       };
     } catch (error) {
-      console.error("\nChallenge failed:", error.message);
-      console.error("Stack trace:", error.stack);
+      logger.error("\nChallenge failed:", error);
       throw error;
+    }
+  }
+
+  /**
+   * API-friendly version of run() for Swagger
+   */
+  async runChallenge() {
+    try {
+      // Step 1: Fetch task data from ADP API
+      const taskData = await this.apiService.fetchTaskData();
+
+      // Step 2: Find top earner from previous year
+      const topEarner = await this.transactionService.findTopEarnerFromLastYear(
+        taskData.transactions
+      );
+
+      // Step 3: Filter alpha transactions from top earner
+      const alphaTransactionIds =
+        await this.transactionService.filterAlphaTransactions(
+          taskData.transactions,
+          topEarner.id
+        );
+
+      // Step 4: Submit results to ADP API
+      const submitResponse = await this.apiService.submitResults(
+        taskData.id,
+        alphaTransactionIds
+      );
+
+      return {
+        success: true,
+        message: "Challenge completed successfully",
+        data: {
+          taskId: taskData.id,
+          topEarner: {
+            name: topEarner.name,
+            id: topEarner.id,
+            totalEarnings: topEarner.totalEarnings,
+          },
+          alphaTransactionIds: alphaTransactionIds,
+          apiResponse: submitResponse,
+        },
+      };
+    } catch (error) {
+      return {
+        success: false,
+        error: "Challenge failed",
+        message: error.message,
+      };
     }
   }
 }

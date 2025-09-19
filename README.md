@@ -62,8 +62,27 @@ adp-challenge/
 ```bash
 npm start          # Run the main application
 npm test           # Run unit tests
-npm run dev        # Run in development mode
+npm run swagger    # Start Swagger UI for API testing
 ```
+
+## API Testing with Swagger
+
+This project includes a **Swagger UI** interface for interactive testing:
+
+```bash
+# Start Swagger UI server
+npm run swagger
+```
+
+**Access:** http://localhost:3000/api-docs
+
+### Available Endpoints
+
+| Endpoint             | Method | Description                                  |
+| -------------------- | ------ | -------------------------------------------- |
+| `/api/run-challenge` | GET    | Executes the complete ADP challenge workflow |
+| `/api-docs`          | GET    | Swagger UI documentation interface           |
+| `/`                  | GET    | Home page with project overview              |
 
 ## Testing
 
@@ -73,6 +92,10 @@ npm test
 
 # Test core functionality
 node tests/test.js
+
+# Test via Swagger UI (recommended)
+npm run swagger
+# Then visit http://localhost:3000/api-docs
 ```
 
 ## How It Works
@@ -97,11 +120,11 @@ node tests/test.js
 
 ## Evaluation Criteria
 
-✅ **No Frameworks** - Uses only libraries (axios, dotenv)  
-✅ **Easy Setup** - `npm install` and `npm start`  
-✅ **No CORS Issues** - Runs cleanly on localhost  
-✅ **Well Commented** - Clear, professional code documentation  
-✅ **Error Free** - Robust error handling and validation
+- **No Frameworks** - Uses only libraries (axios, dotenv)
+- **Easy Setup** - `npm install` and `npm start`
+- **No CORS Issues** - Runs cleanly on localhost
+- **Well Commented** - Clear, professional code documentation
+- **Error Free** - Robust error handling and validation
 
 ## License
 
