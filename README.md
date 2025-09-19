@@ -37,7 +37,7 @@ npm start
 Create a `.env` file (optional):
 
 ```env
-API_BASE_URL=https://interview.adpeai.com/api/v2
+API_BASE_URL=
 API_TIMEOUT=10000
 API_RETRY_ATTEMPTS=3
 USER_AGENT=ADP-Challenge/1.0.0
@@ -48,11 +48,14 @@ USER_AGENT=ADP-Challenge/1.0.0
 ```
 adp-challenge/
 ├── index.js                    # Main application entry point
+├── swagger-static.js          # Swagger UI server
 ├── services/
 │   ├── apiService.js          # HTTP API communication
 │   └── transactionService.js  # Business logic
 ├── tests/
 │   └── test.js                # Unit tests
+├── utils/
+│   └── logger.js              # Professional logging system
 ├── package.json               # Dependencies and scripts
 └── README.md                 # This file
 ```
