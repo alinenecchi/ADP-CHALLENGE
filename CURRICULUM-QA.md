@@ -10,6 +10,12 @@
 
 **R:** Na On2, trabalho desde março de 2021 como desenvolvedora, focando em desenvolvimento front-end para projetos grandes. Meu principal projeto é o site da Toyota para Brasil e Argentina, onde crio interfaces que funcionam bem em qualquer dispositivo usando React.js, Next.js e Styled Components. Também conecto com APIs GraphQL e REST, mantenho sistemas que crescem bem e ajudo outros desenvolvedores da equipe.
 
+Há mais ou menos 2 anos atrás, a empresa Dex01 fez uma junção com a On2 e desde esse momento comecei a atuar como full stack, trabalhando com Node.js, GraphQL, PostgreSQL e TypeScript no backend, desenvolvendo histórias completas e soluções end-to-end.
+
+### **P: Quantas pessoas tem na sua empresa?**
+
+**R:** Na On2, somos uma equipe de aproximadamente 15-20 pessoas, incluindo desenvolvedores, designers, gerentes de projeto e outros profissionais. A empresa cresceu bastante nos últimos anos, especialmente após a fusão com a Dex01, o que trouxe mais projetos e oportunidades de crescimento para toda a equipe.
+
 ---
 
 ### **P: Como foi sua experiência com ERP Protheus na Leef?**
