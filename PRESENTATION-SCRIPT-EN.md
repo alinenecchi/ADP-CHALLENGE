@@ -4,29 +4,29 @@
 
 ### **⏱ 0:00 – 0:30 | PERSONAL INTRODUCTION**
 
-"Hello everyone! My name is Aline, and I'm excited to be here today to present my solution for the ADP Innovation Labs Challenge.
+"Hello everyone! My name is Aline, and I'm very excited to be here today showing my solution for the ADP Innovation Labs Challenge.
 
-Before we begin, I'd like to mention that this is my first interview in English, and also my first interview in about four years, as I've been working at the same company for a long time. So if at any moment I don't understand something, I'd kindly ask you to repeat or speak a bit slower. And if you don't understand me, feel free to ask me to repeat as well.
+Before we start, I'd like to say that this is my first interview in English, and also my first interview in about four years, since I worked at the same company for a long time. So, if at any moment I don't understand something, I kindly ask you to repeat or speak a little slower. And if you don't understand me, feel free to ask me to repeat as well.
 
-I'm very happy to be here and have the opportunity to talk with you today."
+I'm very happy to be here and have the chance to talk with you today."
 
 ### **⏱ 0:30 – 1:00 | PROJECT INTRODUCTION**
 
-Today I'll show you how I solved the ADP challenge. When I received the task, the first thing I did was analyze what really made sense. I thought: should I build a more robust architecture to show everything I know about configuration and best practices? Or should I follow the simpler path?
+Today I'm going to show how I solved the ADP challenge. When I got the task, the first thing I did was look at what really made sense. I thought: should I build a more complex setup to show everything I know about setup and good practices? Or should I follow the simpler path?
 
-I chose a **simple and direct approach**, focusing on solving the problem as defined in the task. Although I have knowledge to implement more complex architectures, I understood that the best here was to follow what was asked: **simplicity and efficiency**."
+I chose a **simple and direct way**, focusing on solving the problem as it was asked in the task. Although I have knowledge to build more complex setups, I understood that the best here was to follow what was asked: **simplicity and efficiency**."
 
 ### Project Philosophy
 
-"I opted for a **simple and direct approach**, focusing on solving the problem as defined in the task. Although I have knowledge to implement more complex architectures, I understood that the best here was to follow what was asked: **simplicity and efficiency**."
+"I chose a **simple and direct way**, focusing on solving the problem as it was asked in the task. Although I have knowledge to build more complex setups, I understood that the best here was to follow what was asked: **simplicity and efficiency**."
 
-"Because in daily work, there are often tasks that need this type of focus and approach, like solving a production problem where we need to act quickly and focus on the central problem without over-engineering."
+"Because in daily work, tasks often come up that need this type of focus and approach, like solving some problem in production, where we need to act quickly and focus on the main problem without over-engineering."
 
 ### Strategic Decisions
 
-- **Focus on essentials**: Solve the problem without over-engineering
-- **Clean code**: Readability and maintainability
-- **Clear documentation**: To facilitate review and understanding
+- **Focus on what matters**: Solve the problem without over-engineering
+- **Clean code**: Easy to read and maintain
+- **Clear documentation**: To make review and understanding easier
 
 ---
 
@@ -38,11 +38,11 @@ I chose a **simple and direct approach**, focusing on solving the problem as def
 
 ```
 adp-challenge/
-├── index.js                    # Centralized entry point
-├── services/                   # Separation of responsibilities
+├── index.js                    # Main entry point
+├── services/                   # Clear separation of jobs
 │   ├── apiService.js          # HTTP communication
 │   └── transactionService.js  # Business logic
-├── utils/                     # Reusable utilities
+├── utils/                     # Reusable tools
 │   └── logger.js              # Logging system
 ├── tests/                     # Organized tests
 └── swagger-static.js          # Documentation interface
