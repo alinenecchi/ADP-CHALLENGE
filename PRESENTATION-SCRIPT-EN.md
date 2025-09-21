@@ -277,51 +277,51 @@ const mockTransactions = [
 // 4. Submit results
 ```
 
-### Explanation of each step:
+### Simple explanation of each step:
 
-**1. Fetch task data:**
+**1. Get task data:**
 
-- **What it does**: Connects to ADP API and fetches 699 transactions
-- **How it works**: Makes GET request to `/get-task` and receives JSON data
-- **Result**: List of transactions with employees, amounts and types
+- **What it does**: Gets 699 transactions from ADP API
+- **How it works**: Asks for data and gets it back
+- **What we get**: List of transactions with people, money and types
 
 **2. Find top earner:**
 
-- **What it does**: Analyzes all transactions from previous year (2024)
-- **How it works**: Sums values by employee and finds who earned the most
-- **Result**: Abram Choi (SED133) with $438.989 in 83 transactions
+- **What it does**: Looks at all transactions from last year (2024)
+- **How it works**: Adds up money by person and finds who got the most
+- **What we get**: Abram Choi (SED133) with $438.989 in 83 transactions
 
-**3. Filter alpha transactions:**
+**3. Get alpha transactions:**
 
 - **What it does**: Gets only "alpha" transactions from the top earner
-- **How it works**: Filters by employee ID and "alpha" type from previous year
-- **Result**: 45 alpha transactions identified
+- **How it works**: Looks for transactions with "alpha" type from last year
+- **What we get**: 45 alpha transactions found
 
-**4. Submit results:**
+**4. Send results:**
 
-- **What it does**: Sends alpha transaction IDs to ADP API
-- **How it works**: Makes POST request to `/submit-task` with the IDs
-- **Result**: API responds "Correct" confirming it's right
+- **What it does**: Sends the alpha transaction IDs to ADP API
+- **How it works**: Sends the IDs and waits for answer
+- **What we get**: API says "Correct" which means it's right
 
-### Why this structure?
+### Why this way?
 
-#### 1. Linear and clear flow
+#### 1. Easy to follow
 
-- **4 well-defined steps**: Easy to understand and debug
-- **Separation of responsibilities**: Each service has its function
-- **Centralized error handling**: Consistent error treatment
+- **4 clear steps**: Easy to understand and fix
+- **Each part has its job**: Each service does one thing
+- **Same way to handle errors**: All errors are handled the same way
 
 #### 2. runChallenge() method
 
-- **Reusable**: Can be called from different contexts
-- **Testable**: Easy to test in isolation
+- **Can be used again**: Can be called from different places
+- **Easy to test**: Can test it by itself
 - **Swagger integration**: Used in `/api/run-challenge` endpoint
 
-#### 3. Structured logging
+#### 3. Good logging
 
-- **Traceability**: Each step is logged
-- **Debugging**: Easy to identify where problems occur
-- **Professional**: Structured and informative logs
+- **Can see what happens**: Each step is logged
+- **Easy to find problems**: Easy to see where things go wrong
+- **Professional**: Good and clear logs
 
 ---
 
