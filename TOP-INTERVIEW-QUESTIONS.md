@@ -11,6 +11,8 @@
 **P: Conte-me sobre você.**
 **R:** Sou Aline, desenvolvedora full stack com 5 anos de experiência, atualmente na Dex01 (que era On2). Trabalho principalmente com React, Node.js e TypeScript, desenvolvendo soluções para grandes clientes como Toyota. Tenho experiência tanto em front-end quanto back-end, e estou sempre buscando aprender novas tecnologias. Meu foco é criar soluções robustas e escaláveis que realmente impactem os usuários.
 
+No meu dia a dia, além de desenvolver, também sou responsável por dar suporte à equipe e participar de reuniões com clientes. Faço code reviews, análises técnicas e sou responsável pelo release em produção. Trabalho com time internacional na América Latina, como Venezuela, Argentina e Peru.
+
 ### **2. MOTIVAÇÃO PARA A VAGA**
 
 **P: Por que você quer trabalhar na ADP?**
