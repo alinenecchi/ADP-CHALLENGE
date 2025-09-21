@@ -16,7 +16,9 @@ In my daily work, besides developing, I'm also responsible for supporting the te
 ### **2. MOTIVATION FOR THE POSITION**
 
 **Q: Why do you want to work at ADP?**
-**A:** ADP is a leading HR technology company with over 70 years of experience. I'm very interested in working with payroll data and critical systems that impact millions of people. Additionally, ADP's innovation culture and focus on technologies like AI and analytics attract me. I see a great opportunity for growth and learning here.
+**A:** ADP is a leading HR technology company with over 70 years of experience. I'm very interested in working with payroll data and critical systems that impact millions of people. Additionally, ADP's innovation culture and focus on technologies like AI and analytics attract me.
+
+I want to work at ADP because I believe the company can provide me with a solid career, with exchange of experiences with international teams, to learn and develop more in my career. I see a great opportunity for professional growth and continuous learning here.
 
 ### **3. TECHNICAL EXPERIENCE**
 

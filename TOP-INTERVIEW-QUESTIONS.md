@@ -16,7 +16,9 @@ No meu dia a dia, além de desenvolver, também sou responsável por dar suporte
 ### **2. MOTIVAÇÃO PARA A VAGA**
 
 **P: Por que você quer trabalhar na ADP?**
-**R:** A ADP é uma empresa líder em tecnologia de RH com mais de 70 anos de experiência. Me interessa muito trabalhar com dados de folha de pagamento e sistemas críticos que impactam milhões de pessoas. Além disso, a cultura de inovação da ADP e o foco em tecnologias como IA e analytics me atraem. Vejo uma grande oportunidade de crescimento e aprendizado aqui.
+**R:** A ADP é uma empresa líder em tecnologia de RH com mais de 70 anos de experiência. Me interessa muito trabalhar com dados de folha de pagamento e sistemas críticos que impactam milhões de pessoas. Além disso, a cultura de inovação da ADP e o foco em tecnologias como IA e analytics me atraem.
+
+Quero trabalhar na ADP porque acredito que a empresa pode me proporcionar uma carreira sólida, com troca de experiências com times a nível internacional, para aprender e me desenvolver mais na minha carreira. Vejo uma grande oportunidade de crescimento profissional e aprendizado contínuo aqui.
 
 ### **3. EXPERIÊNCIA TÉCNICA**
 
