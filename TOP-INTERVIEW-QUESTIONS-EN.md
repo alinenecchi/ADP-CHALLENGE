@@ -9,7 +9,7 @@
 ### **1. PERSONAL INTRODUCTION**
 
 **Q: Tell me about yourself.**
-**A:** I'm Aline, a full stack developer with 4 years of experience, currently at On2. I work mainly with React, Node.js and TypeScript, developing solutions for big clients like Toyota. I have experience in both front-end and back-end, and I'm always looking to learn new technologies. My focus is creating robust and scalable solutions that really impact users.
+**A:** I'm Aline, a full stack developer with 5 years of experience, currently at Dex01 (which was On2). I work mainly with React, Node.js and TypeScript, developing solutions for big clients like Toyota. I have experience in both front-end and back-end, and I'm always looking to learn new technologies. My focus is creating robust and scalable solutions that really impact users.
 
 ### **2. MOTIVATION FOR THE POSITION**
 
@@ -19,7 +19,7 @@
 ### **3. TECHNICAL EXPERIENCE**
 
 **Q: Tell me about your experience at On2.**
-**A:** At On2, I've been working since March 2021 as a full stack developer. My main project is the Toyota website for Brazil and Argentina, where I create responsive interfaces using React.js, Next.js and Styled Components. I also work with Node.js, GraphQL, PostgreSQL and TypeScript on the backend. The company has about 15-20 people and grew a lot after the merger with Dex01.
+**A:** At Dex01 (which was On2), I've been working since March 2021 as a full stack developer. My main project is the Toyota website for Brazil and Argentina, where I create responsive interfaces using React.js, Next.js and Styled Components. I also work with Node.js, GraphQL, PostgreSQL and TypeScript on the backend. The company has about 15-20 people and grew a lot after the merger between On2 and Dex01.
 
 ---
 

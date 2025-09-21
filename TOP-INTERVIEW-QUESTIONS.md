@@ -9,7 +9,7 @@
 ### **1. APRESENTAÇÃO PESSOAL**
 
 **P: Conte-me sobre você.**
-**R:** Sou Aline, desenvolvedora full stack com 4 anos de experiência, atualmente na On2. Trabalho principalmente com React, Node.js e TypeScript, desenvolvendo soluções para grandes clientes como Toyota. Tenho experiência tanto em front-end quanto back-end, e estou sempre buscando aprender novas tecnologias. Meu foco é criar soluções robustas e escaláveis que realmente impactem os usuários.
+**R:** Sou Aline, desenvolvedora full stack com 5 anos de experiência, atualmente na Dex01 (que era On2). Trabalho principalmente com React, Node.js e TypeScript, desenvolvendo soluções para grandes clientes como Toyota. Tenho experiência tanto em front-end quanto back-end, e estou sempre buscando aprender novas tecnologias. Meu foco é criar soluções robustas e escaláveis que realmente impactem os usuários.
 
 ### **2. MOTIVAÇÃO PARA A VAGA**
 
@@ -19,7 +19,7 @@
 ### **3. EXPERIÊNCIA TÉCNICA**
 
 **P: Conte-me sobre sua experiência na On2.**
-**R:** Na On2, trabalho desde março de 2021 como desenvolvedora full stack. Meu principal projeto é o site da Toyota para Brasil e Argentina, onde crio interfaces responsivas usando React.js, Next.js e Styled Components. Também trabalho com Node.js, GraphQL, PostgreSQL e TypeScript no backend. A empresa tem cerca de 15-20 pessoas e cresceu muito após a fusão com a Dex01.
+**R:** Na Dex01 (que era On2), trabalho desde março de 2021 como desenvolvedora full stack. Meu principal projeto é o site da Toyota para Brasil e Argentina, onde crio interfaces responsivas usando React.js, Next.js e Styled Components. Também trabalho com Node.js, GraphQL, PostgreSQL e TypeScript no backend. A empresa tem cerca de 15-20 pessoas e cresceu muito após a fusão entre On2 e Dex01.
 
 ---
 
