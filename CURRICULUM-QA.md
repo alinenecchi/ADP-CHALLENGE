@@ -1,22 +1,14 @@
-# 📋 CURRICULUM Q&A GUIDE
+# 📋 CURRICULUM Q&A GUIDE - PORTUGUÊS
 
 ## Perguntas e Respostas sobre Currículo - Aline Dias Necchi Ribeiro
 
 ---
 
-## 🇧🇷 PORTUGUÊS | 🇺🇸 ENGLISH
-
----
-
-## **1. EXPERIÊNCIA PROFISSIONAL | PROFESSIONAL EXPERIENCE**
+## **1. EXPERIÊNCIA PROFISSIONAL**
 
 ### **P: Conte-me sobre sua experiência na On2. O que você desenvolveu lá?**
 
 **R:** Na On2, trabalho desde março de 2021 como desenvolvedora, focando em desenvolvimento front-end para projetos grandes. Meu principal projeto é o site da Toyota para Brasil e Argentina, onde crio interfaces que funcionam bem em qualquer dispositivo usando React.js, Next.js e Styled Components. Também conecto com APIs GraphQL e REST, mantenho sistemas que crescem bem e ajudo outros desenvolvedores da equipe.
-
-### **Q: Tell me about your experience at On2. What did you develop there?**
-
-**A:** At On2, I've been working since March 2021 as a developer, focusing on front-end development for big projects. My main project is the Toyota website for Brazil and Argentina, where I create interfaces that work well on any device using React.js, Next.js and Styled Components. I also connect with GraphQL and REST APIs, maintain systems that grow well and help other developers on the team.
 
 ---
 
@@ -24,23 +16,15 @@
 
 **R:** Na Leef, trabalhei como Analista de Software de novembro de 2020 a março de 2021, criando módulos para o sistema ERP Protheus (TOTVS) usando AdvPL. Focava nos módulos de Estoque, Compras, Faturamento e Financeiro. Criava soluções personalizadas para conectar sistemas e atender necessidades específicas dos clientes.
 
-### **Q: How was your experience with Protheus ERP at Leef?**
-
-**A:** At Leef, I worked as a Software Analyst from November 2020 to March 2021, creating modules for the Protheus ERP system (TOTVS) using AdvPL. I focused on Inventory, Purchasing, Billing and Financial modules. I created custom solutions to connect systems and meet specific client needs.
-
 ---
 
 ### **P: O que você aprendeu como estagiária na Aceleradora Ágil?**
 
 **R:** Na Aceleradora Ágil, de março a novembro de 2020, criei aplicações web usando JavaScript, Java e PostgreSQL. Trabalhei de casa com equipes de diferentes áreas, o que me ajudou a aprender a gerenciar meu tempo e me organizar sozinha. Foi uma experiência muito boa para aprender a trabalhar com pessoas de longe.
 
-### **Q: What did you learn as an intern at Aceleradora Ágil?**
-
-**A:** At Aceleradora Ágil, from March to November 2020, I created web applications using JavaScript, Java and PostgreSQL. I worked from home with teams from different areas, which helped me learn to manage my time and organize myself. It was a very good experience for learning to work with people from far away.
-
 ---
 
-## **2. PROJETOS E TECNOLOGIAS | PROJECTS AND TECHNOLOGIES**
+## **2. PROJETOS E TECNOLOGIAS**
 
 ### **P: Conte-me sobre o projeto Toyota. Quais foram os principais desafios?**
 

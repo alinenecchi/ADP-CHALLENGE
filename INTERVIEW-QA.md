@@ -1,14 +1,10 @@
-# 📋 INTERVIEW Q&A GUIDE
+# 📋 INTERVIEW Q&A GUIDE - PORTUGUÊS
 
 ## Guia de Perguntas e Respostas para Entrevista
 
 ---
 
-## 🇧🇷 PORTUGUÊS | 🇺🇸 ENGLISH
-
----
-
-## **1. ARQUITETURA E ESCOLHAS TÉCNICAS | ARCHITECTURE AND TECHNICAL CHOICES**
+## **1. ARQUITETURA E ESCOLHAS TÉCNICAS**
 
 ### **P: Por que escolheu uma arquitetura simples ao invés de uma mais complexa?**
 
@@ -258,4 +254,4 @@
 
 ---
 
-**🎯 BOA SORTE NA ENTREVISTA! | GOOD LUCK IN THE INTERVIEW!**
+**🎯 BOA SORTE NA ENTREVISTA!**
